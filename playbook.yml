@@ -1,0 +1,13 @@
+- hosts: werservers
+  vars_files:
+    - ./configs/config.yml
+  roles:
+    - nodejs
+    - nginx
+
+- hosts: nodeWerservers
+  vars_files:
+    - ./configs/nodeConfig.yml
+  roles:
+    - nodejs
+

@@ -1,0 +1,25 @@
+[
+  {
+    "tasks": [
+      {
+        "become": true,
+        "yum": {
+          "state": "latest",
+          "name": "nginx"
+        },
+        "name": "Install nginx"
+      },
+      {
+        "become": true,
+        "name": "Run Nginx",
+        "service": {
+          "state": "restarted",
+          "enabled": true,
+          "name": "nginx",
+          "port": "8080"
+        }
+      }
+    ],
+    "hosts": "werservers"
+  }
+]
